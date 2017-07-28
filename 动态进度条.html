@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	.wave{
+        		margin: 200px auto;
+        		width: 200px;
+        		height: 200px;
+        		position: relative;
+        		background-color: rgb(118, 218, 255);
+        		border-radius: 50%;
+        	}
+        	.wave::before,
+        	.wave::after{
+        		content: "";
+        		display: block;
+        		width: 400px;
+        		height: 400px;
+        		position:absolute;
+        		top: 0;
+        		left: 50%;
+        		background-color:rgba(255, 255, 255, 0.4);
+        		border-radius:45%;
+        		transform: translate(-50%, -70%) rotate(0);
+        		animation: animate 6s linar infinite;
+        		z-index: 10;
+        	}
+        	.wave::after{
+        		border-radius: 47%;
+        		background-color: rgba(255, 0255 255, 0.9);
+        		transform: translate(-50%,-70%) rotate(0);
+        		animation: animate 10s linear -5s infinite;
+        		z-index: 20;
+        	}
+        	@keyframes animate{
+        		50%{
+        			transform: translate(-50%, -73%) rotate(180deg);
+        		}
+        		100%{
+        			transform: translate(-50%, -70%) rotate(360deg);
+        		}
+        	}
+        </style>
+    </head>
+    <body>
+    	<div class="wave"></div>
+    </body>
+</html>
